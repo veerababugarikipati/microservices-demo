@@ -20,11 +20,11 @@ stages:
   displayName: Build
   jobs:
   - job: Build
-    steps:
-      
+    steps: 
       - task: Gradle@3
         inputs:
           gradleWrapperFile: 'gradlew'
+          options: '--debug'
           tasks: 'build'
           publishJUnitResults: true
           testResultsFiles: '**/TEST-*.xml'
