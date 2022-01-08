@@ -4,4 +4,4 @@ EXPOSE 1111
 EXPOSE 2222
 EXPOSE 3333
 # Optional default command
-# ENTRYPOINT ["java","-jar","/app.jar","reg"]
+ENTRYPOINT ["java","-jar","/app.jar","reg"]
