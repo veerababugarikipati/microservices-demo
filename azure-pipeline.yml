@@ -23,13 +23,15 @@ stages:
     steps:
       - task: Gradle@3
         inputs:
-          gradleWrapperFile: './gradlew'
-          tasks: 'build'
+          workingDirectory: ""
+          gradleWrapperFile: "gradlew"
+          gradleOptions: "-Xmx3072m"
+          javaHomeOption: "JDKVersion"
+          jdkVersionOption: "1.8"
+          jdkArchitectureOption: "x64"
           publishJUnitResults: true
-          testResultsFiles: '**/TEST-*.xml'
-          javaHomeOption: 'JDKVersion'
-          sonarQubeRunAnalysis: false
-          spotBugsAnalysis: false
+          testResultsFiles: "**/TEST-*.xml"
+          tasks: "build"
       - task: Docker@2
         displayName: Build
         inputs:
