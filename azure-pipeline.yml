@@ -23,7 +23,7 @@ stages:
     steps:
       - task: Gradle@3
         inputs:
-          gradleWrapperFile: 'gradlew'
+          gradleWrapperFile: './gradlew'
           tasks: 'build'
           publishJUnitResults: true
           testResultsFiles: '**/TEST-*.xml'
